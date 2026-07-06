@@ -187,16 +187,6 @@ button .fas {
   text-align: center;
 }
 
-.attendance-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin-bottom: 15px;
-  font-size: 17px;
-  color: #64748b;
-}
-
 #attendeeCount {
   color: #0071c5;
   font-size: 24px;
@@ -256,14 +246,6 @@ button .fas {
 .success-message {
   background-color: #e8f4fc;
   color: #003c71;
-}
-
-/* Counter */
-#attendeeCount {
-  color: #0071c5;
-  font-size: 24px;
-  font-weight: 700;
-  margin: 0 2px;
 }
 
 /* Footer */
@@ -329,6 +311,8 @@ select {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  position: relative;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 
 /* Team card colors */
@@ -346,6 +330,130 @@ select {
   font-size: 15px;
   font-weight: 500;
   color: #475569;
+}
+
+/* Winning team highlight, applied once the attendance goal is reached */
+.team-card.winning-team {
+  box-shadow: 0 0 0 3px #f5b301, 0 8px 18px rgba(245, 179, 1, 0.35);
+  transform: translateY(-3px);
+}
+
+.team-card.winning-team::after {
+  content: "🏆 Leading";
+  position: absolute;
+  top: -12px;
+  right: 10px;
+  background-color: #f5b301;
+  color: #4a3200;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+/* Celebration banner */
+.celebration-banner {
+  display: none;
+  margin-bottom: 15px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #fff4d6, #ffe9b3);
+  color: #7a4a00;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Attendee list */
+.attendee-list-section {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #f1f5f9;
+  text-align: left;
+}
+
+.attendee-list-section h3 {
+  color: #64748b;
+  font-size: 16px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.attendee-list-section h3 i {
+  color: #0071c5;
+}
+
+.attendee-list {
+  list-style: none;
+  max-height: 280px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.attendee-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background-color: #f8fafc;
+  font-size: 15px;
+  color: #2c3e50;
+}
+
+.attendee-item.team-water {
+  background-color: #e8f7fc;
+}
+.attendee-item.team-zero {
+  background-color: #ecfdf3;
+}
+.attendee-item.team-power {
+  background-color: #fff7ed;
+}
+
+.attendee-emoji {
+  font-size: 16px;
+}
+
+.attendee-name {
+  font-weight: 600;
+}
+
+.attendee-team {
+  margin-left: auto;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.attendee-empty {
+  text-align: center;
+  color: #94a3b8;
+  font-style: italic;
+  padding: 20px;
+}
+
+/* Reset control */
+.reset-btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 0;
+  height: auto;
+  min-width: 0;
+  background: none;
+  box-shadow: none;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background: none;
+  color: #0071c5;
+  transform: none;
+  box-shadow: none;
 }
 
 /* Mobile responsive */
